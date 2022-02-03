@@ -1,22 +1,48 @@
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
+import Script from 'next/script'
 import { useRouter } from 'next/router'
-import { AppProps } from 'next/app'
-import '../styles/global.css'
-import { pageview } from '../lib/gtag'
+import * as gtag from '../lib/gtag'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      if (isProduction) pageview(url)
+    const handleRouteChange = (url: string) => {
+      if (isProduction) gtag.pageview(url)
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-
-  return <Component {...pageProps} />
+  
+  return (
+    <>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  )
 }
+
+export default App
