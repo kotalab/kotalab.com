@@ -27,21 +27,28 @@
   }
 }
 
-.item {
+.experience {
   display: grid;
   grid-template-columns: 66px 8px 1fr;
+  grid-template-areas:
+    'period dot detail';
   align-items: center;
   gap: var(--spacing-default);
   position: relative;
 }
 
 .period {
+  grid-area: period;
+}
+
+.term {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
 .dot {
+  grid-area: dot;
   width: 6px;
   height: 6px;
   border-radius: 3px;
@@ -58,6 +65,7 @@
 }
 
 .detail {
+  grid-area: detail;
   display: flex;
   flex-direction: column;
 }

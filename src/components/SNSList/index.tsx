@@ -4,7 +4,7 @@ import styles from './SNSList.module.css'
 const SNSList = () => (
     <ul className={styles.list}>
         {snsLists.map(item => (
-            <li>
+            <li key={item.title}>
                 <a href={item.link}>
                     <picture>
                         <source srcSet={`/images/${item.title}-dark.svg`} media='(prefers-color-scheme:dark)' />
