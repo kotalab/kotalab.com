@@ -1,0 +1,10 @@
+.h1 {
+    font-size: var(--font-size-heading1);
+    line-height: 3.375rem;
+    margin-bottom: var(--spacing-small);
+}
+
+.h2 {
+    font-size: var(--font-size-heading2);
+    margin-bottom: var(--spacing-small);
+}

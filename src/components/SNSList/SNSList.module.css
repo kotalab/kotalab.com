@@ -1,0 +1,32 @@
+.list {
+    padding-top: var(--spacing-default);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-small);
+}
+
+.list li {
+    line-height: 30px;
+}
+
+.list a {
+    color: var(--label-primary);
+}
+
+.list img {
+    margin-right: var(--spacing-small);
+}
+
+.list span {
+    display: none;
+}
+
+@media (min-width:768px) {
+    .list {
+        flex-direction: column;
+    }
+
+    .list span {
+        display: inline;
+    }  
+}

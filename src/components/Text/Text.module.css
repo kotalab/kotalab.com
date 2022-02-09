@@ -1,0 +1,8 @@
+.bold {
+    font-weight: bold;
+}
+
+.text {
+    white-space: pre-wrap;
+    line-height: 1.5rem;
+}
