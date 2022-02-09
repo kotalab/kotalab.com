@@ -42,7 +42,13 @@ export const Top: NextPage = () => {
                 <span>
                     © 2022 kotalab.com
                 </span>
-                <a href='https://github.com/kotalab/kotalab.com/'>Edit this page on GitHub</a>
+                <a
+                    href='https://github.com/kotalab/kotalab.com/'
+                    target='_blank'
+                    rel="noopener noreferrer"
+                >
+                    Edit this page on GitHub
+                </a>
             </footer>
         </div>
     )
