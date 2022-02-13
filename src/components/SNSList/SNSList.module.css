@@ -13,7 +13,7 @@
     color: var(--label-primary);
 }
 
-.list img {
+.list svg {
     margin-right: var(--spacing-small);
 }
 
