@@ -1,5 +1,27 @@
 import { snsLists } from './data'
 import styles from './SNSList.module.css'
+import Facebook from '../../assets/svg/facebook.svg'
+import Github from '../../assets/svg/github.svg'
+import Twitter from '../../assets/svg/twitter.svg'
+import Mail from '../../assets/svg/mail.svg'
+import Wantedly from '../../assets/svg/wantedly.svg'
+
+const svg = (title: string) => {
+    switch (title) {
+        case 'twitter':
+            return <Twitter />
+        case 'github':
+            return <Github />
+        case 'facebook':
+            return <Facebook />
+        case 'wantedly':
+            return <Wantedly />
+        case 'mail':
+            return <Mail />
+        default:
+            return <Facebook />
+    }
+}
 
 const SNSList = () => (
     <ul className={styles.list}>
@@ -10,11 +32,8 @@ const SNSList = () => (
                     target='_blank'
                     rel="noopener noreferrer"
                 >
-                    <picture>
-                        <source srcSet={`/images/${item.title}-dark.svg`} media='(prefers-color-scheme:dark)' />
-                        <img src={`/images/${item.title}-lignt.svg`} width={30} height={30} />
-                        <span>{item.name}</span>
-                    </picture>
+                    {svg(item.title)}
+                    <span>{item.name}</span>
                 </a>
             </li>
         ))}
