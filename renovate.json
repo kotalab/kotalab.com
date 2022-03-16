@@ -4,5 +4,13 @@
   ],
   "patch": {
     "automerge": true
-  }
+  },
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "automerge": true
+    }
+  ]
 }
