@@ -1,6 +1,8 @@
+import { ReactNode } from 'react';
 import styles from './Heading.module.css';
 
 type Props = {
+    children: ReactNode
     HeadingType?: 'h1' | 'h2'
 }
 
