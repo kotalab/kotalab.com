@@ -14,14 +14,14 @@
   width: 1px;
   background-color: var(--white);
   position: absolute;
-  top: 67px;
+  top: 50px;
   bottom: 50px;
   left: 100.5px;
 }
 
 @media (min-width:768px) {
   .wrapper::before {
-    top: 75px;
+    top: 55px;
     bottom: 55px;
     left: 116.5px;
   }
