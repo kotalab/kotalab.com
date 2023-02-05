@@ -1,25 +1,24 @@
-import 'destyle.css';
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { useEffect } from 'react'
-import Script from 'next/script'
-import { useRouter } from 'next/router'
-import * as gtag from '../lib/gtag'
+import "@kotala/css";
+import type { AppProps } from "next/app";
+import { useEffect } from "react";
+import Script from "next/script";
+import { useRouter } from "next/router";
+import * as gtag from "../lib/gtag";
 
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === "production";
 
 function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      if (isProduction) gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
+      if (isProduction) gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
-  
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
@@ -43,7 +42,7 @@ function App({ Component, pageProps }: AppProps) {
       />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
