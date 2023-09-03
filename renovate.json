@@ -1,16 +1,22 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "patch": {
-    "automerge": true
-  },
+  "extends": ["config:base"],
   "packageRules": [
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
-      "automerge": true
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "platformAutomerge": true
+    },
+    {
+      "groupName": "ESLint",
+      "extends": ["packages:eslint"]
+    },
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
     }
   ]
 }
