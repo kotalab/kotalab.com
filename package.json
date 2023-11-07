@@ -14,7 +14,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.18.8",
+    "@types/node": "18.18.9",
     "@types/react": "18.2.36",
     "babel-plugin-inline-react-svg": "2.0.2",
     "eslint": "8.53.0",
