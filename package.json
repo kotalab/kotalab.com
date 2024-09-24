@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "18.19.50",
-    "@types/react": "18.3.8",
+    "@types/react": "18.3.9",
     "babel-plugin-inline-react-svg": "2.0.2",
     "eslint": "8.57.1",
     "eslint-config-next": "13.5.7",
