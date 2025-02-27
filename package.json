@@ -17,8 +17,8 @@
     "@types/node": "18.19.76",
     "@types/react": "18.3.18",
     "babel-plugin-inline-react-svg": "2.0.2",
-    "eslint": "8.57.1",
-    "eslint-config-next": "13.5.8",
+    "eslint": "9.21.0",
+    "eslint-config-next": "15.2.0",
     "typescript": "5.7.3"
   }
 }
