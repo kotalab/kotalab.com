@@ -19,7 +19,7 @@
     "babel-plugin-inline-react-svg": "2.0.2",
     "eslint": "8.57.1",
     "eslint-config-next": "13.5.11",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "engines": {
     "node": "24.x"
